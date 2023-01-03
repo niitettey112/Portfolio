@@ -1,0 +1,341 @@
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/*
+2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+3. Allow percentage-based heights in the application
+*/
+html, body {
+    height: 100%;
+}
+
+/*
+ Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/*
+6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 500%;
+}
+
+/*
+7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+
+/*
+8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+9. Create a root stacking context
+*/
+
+#root, #__next {
+    isolation: isolate;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: var(--clr-new2);
+    border-radius: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+  
+
+
+:root{
+    --pr-font:'Marcellus', serif;
+    --clr-text: #fff;
+    --secondary-font:'Dongle', sans-serif;
+    --clr-new: #f71835;
+    --clr-new1:#0c142d;
+    --clr-new2:#837aff;
+}
+
+/* HEADER SECTION */
+
+header{
+    width: 100vw;
+    background-color: var(--clr-new1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: .95em 2em;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo__title{
+    margin-left: .95em;
+    animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+    0% {
+      -webkit-transform: translateX(-1000px);
+              transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+}
+  
+.logo__title h2{
+    font-family: var(--pr-font);
+    font-size: 1.3em;
+    color: var(--clr-new2);
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.logo__title h2 span{
+    color: var(--clr-text);
+}
+
+.links ul{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    /* margin: .75em; */
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+}
+  
+.links ul li{
+    list-style: none;
+}
+
+.links ul li a{
+    color: var(--clr-text);
+    text-decoration: none;
+    font-family: var(--pr-font);
+    letter-spacing: 2px;
+    font-size: 1em;
+    padding: .55em 1em;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all .5s ease;
+}
+
+.links ul li a::before{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 5px;
+    height: 40px;
+    background-color: var(--clr-new2);
+    border-radius: 5px;
+    z-index: -10;
+    transition: all .5s ease;
+}
+
+.links ul li a:hover::before{
+    width: 100%;
+}
+
+.header__content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+} 
+
+.header__content span{
+    width: 100px;
+    background-color: var(--clr-new2);
+    height: 3px;
+    position: absolute;
+    top: -2%;
+    left: -15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header__content h2{
+    color:var(--clr-text);
+    text-align: start;
+    font-family: var(--secondary-font);
+    font-size: 2.5em;
+    line-height: 0;
+    font-weight: 300;
+
+}
+
+.name__text h1{
+    font-size: 3rem;
+    color: var(--clr-new2);
+    font-family: var(--secondary-font);
+    font-size: 6.5em;
+    text-transform: uppercase;
+    font-weight: 700;
+    animation: scale-up-hor-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
+}
+
+@keyframes scale-up-hor-center {
+    0% {
+        transform: scaleX(0.4);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+  
+
+.name__text h3{
+    color: var(--clr-text);
+    font-family: var(--secondary-font);
+    font-size: 3em;
+    line-height: 0;
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+
+@keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+}
+  
+  
+.name__text p{
+    color: var(--clr-new2);
+    margin-top: 1em;
+    font-family: var(--secondary-font);
+    font-size: 1.5em;
+}
+
+.buttons{
+    margin-top: 1em;
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-bottom {
+    0% {
+      -webkit-transform: translateY(1000px);
+              transform: translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+.btn1{
+    margin: 0 .85em;
+    padding: .35em 1.5em;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--pr-font);
+    font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-color: var(--clr-new2);
+    color: var(--clr-text);
+}
+.btn2{
+    margin: 0 .85em;
+    padding: .35em 1.5em;
+    outline: none;
+    border: 2px solid var(--clr-new2);
+    border-radius: 5px;
+    font-family: var(--pr-font);
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--clr-text);
+    transition: all .5s ease;
+}
+
+.btn2:hover{
+    background-color: var(--clr-new2);
+}
+
+/* END OF HEADER SECTION */
+
+/* HEADER SECTION QUERY */
+@media (max-width: 790px){
+    nav .links{
+        display: none;
+    }
+}
+
+/* HEADER SECTION QUERY */
