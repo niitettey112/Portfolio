@@ -398,3 +398,230 @@ nav{
     width: 100%;
     filter: drop-shadow(2px 4px 18px #000);
 }
+
+/* ABOUT SECTION ENDS*/
+
+/* SKILLS SECTION */
+.skills__section{
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.5em;
+}
+
+.skills__description{
+    padding: 3em;
+    width: 50%;
+    text-align: center;
+}
+
+.skills__description h1{
+    color: var(--clr-new1);
+    margin-top: 1.2em;
+    padding-bottom: 1.5em;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    line-height: 0;
+    font-family: var(--pr-font);
+    position: relative;
+    z-index: 1;
+}
+
+.skills__description h1::before{
+    content: "";
+    width: 200px;
+    height: 20px;
+    position: absolute;
+    top: -15%;
+    left: 33%;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background-color: var(--clr-new2);
+    z-index: -1;
+}
+
+.skills__description p{
+    line-height: 1;
+    letter-spacing:1px;
+    font-family: var(--secondary-font);
+    font-size: 1em;
+    color: var(--clr-new1);
+}
+
+.skills__content{
+    margin: 2em 6em;
+    gap: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 50%;
+}
+
+.html,
+.css,
+.javascript,
+.figma{
+    width: 270px;
+    height: 100%;
+    cursor: pointer;
+    padding: 3em;
+    border-radius: 10px;
+    background-color: var(--clr-new2);
+    transition: all .5s ease;
+    text-align: center;
+}
+
+.html:hover,
+.css:hover,
+.javascript:hover,
+.figma:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 8px 28px 0px var(--clr-new2);
+} 
+
+
+.bxl-html5,
+.bxl-css3,
+.bxl-javascript,
+.bxl-figma{
+    font-size: 5em;
+}
+
+.html h3,
+.css h3,
+.javascript h3,
+.figma h3{
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    padding-bottom: .85em;
+    font-family: var(--pr-font);
+}
+
+.html p,
+.css p,
+.javascript p,
+.figma p{
+    font-size: .85em;
+    font-family: var(--pr-font);
+}
+
+/* SKILLS SECTION END*/
+
+/* PROJECT SECTION */
+.project__section{
+    width: 100vw;
+    height: 145vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0c142d;
+}
+
+.project__description{
+    padding: 3em;
+    width: 50%;
+    text-align: center;
+}
+
+.project__description h1{
+    color: var(--clr-text);
+    font-family: var(--pr-font);
+    letter-spacing: 2px;
+}
+
+.project__description p{
+    color: var(--clr-text);
+    font-family: var(--secondary-font);
+}
+
+.project__content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3em;
+    padding: 1.2em;
+}
+
+.project__card{
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: var(--clr-new2);
+    cursor: pointer;
+    box-shadow: 0px 8px 28px 0px #00000093;
+    transition: all .5s ease;
+}
+
+.project__card:hover{
+    transform: rotate(5deg);
+}
+
+.project__card img{
+    padding: .55em;
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 28px 0px #00000034;
+}
+
+.project__text{
+    padding: .95em;
+}
+
+.project__text h1{
+    font-size: 1.5em;
+    color: var(--clr-text);
+    font-family: var(--secondary-font);
+    font-weight: 500;
+}
+
+.project__text p{
+    font-family: var(--secondary-font);
+    font-size: .90em;
+    line-height: 2;
+}
+/* PROJECT SECTION ENDS*/
+
+/* FOOTER SECTION */
+footer{
+    width: 100vw;
+    height: 22vh;
+    background-color: var(--clr-new2);
+    text-align: center;
+}
+
+.footer__text h1{
+    padding: .45em;
+    font-size: 1.6em;
+    font-family: var(--pr-font);
+    color: var(--clr-text);
+    letter-spacing: 2px;
+}
+
+.social__links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .55em;
+    gap: 35px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #0c142d75;
+    transition: all .5s ease-in;
+}
+
+.bx:hover{
+    color: var(--clr-new1);
+}
+
+footer p{
+    padding: .55em;
+    font-family: var(--secondary-font);
+    color: #0c142d;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+/* FOOTER SECTION ENDS */
